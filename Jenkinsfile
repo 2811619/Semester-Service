@@ -10,7 +10,7 @@ node {
     }    
     stage('Application_Code_Analysis') {        
         withSonarQubeEnv {
-            bat './mvnw sonar:sonar -Dsonar.projectKey=VendorService_Static_Code_Analysis -Dsonar.projectName=VendorService_Static_Code_Analysis'
+            bat './mvnw sonar:sonar -Dsonar.projectKey=SemesterService_Static_Code_Analysis -Dsonar.projectName=SemesterService_Static_Code_Analysis'
         }
     }
     stage('Application_Deploy') {

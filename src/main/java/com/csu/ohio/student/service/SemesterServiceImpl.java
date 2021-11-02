@@ -53,9 +53,6 @@ public class SemesterServiceImpl implements SemesterService{
 				
 			}
 		}
-		return semesterBeans;
-		
+		return semesterBeans;	
 	}
-	
-
 }

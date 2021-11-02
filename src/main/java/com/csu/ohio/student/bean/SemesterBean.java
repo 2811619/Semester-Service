@@ -2,37 +2,32 @@ package com.csu.ohio.student.bean;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 public class SemesterBean {
 	private Integer studentId;
-	private String semester;
-    private String transactionId;
+	private String transactionId;
     private String studentName;
+    private String semester;
     private Double feePaidAmount;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    @NotNull
-    @Past
-	private Date feePaidDate;
 	private Double balance;
 	private Date paidDate;
 	private String status;
 	
-	public Date getFeePaidDate() {
-		return feePaidDate;
+	public SemesterBean() {
+		super();
 	}
-	public void setFeePaidDate(Date feePaidDate) {
-		this.feePaidDate = feePaidDate;
-	}
-	public String getSemester() {
-		return semester;
-	}
-	public void setSemester(String semester) {
+	public SemesterBean(Integer studentId, String transactionId, String studentName, String semester,
+			Double feePaidAmount, Double balance, Date paidDate, String status ) {
+		super();
+		this.studentId = studentId;
+		this.transactionId = transactionId;
+		this.studentName = studentName;
 		this.semester = semester;
+		this.feePaidAmount = feePaidAmount;
+		this.balance = balance;
+		this.paidDate = paidDate;
+		this.status = status;
 	}
+	
 	public Integer getStudentId() {
 		return studentId;
 	}
@@ -50,6 +45,12 @@ public class SemesterBean {
 	}
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
+	}
+	public String getSemester() {
+		return semester;
+	}
+	public void setSemester(String semester) {
+		this.semester = semester;
 	}
 	public Double getFeePaidAmount() {
 		return feePaidAmount;
@@ -78,8 +79,8 @@ public class SemesterBean {
 	
 	@Override
 	public String toString() {
-		return "SemesterBean [studentId=" + studentId + ", semester=" + semester + ", transactionId=" + transactionId
-				+ ", studentName=" + studentName + ", feePaidAmount=" + feePaidAmount + ", feePaidDate=" + feePaidDate
-				+ ", balance=" + balance + ", paidDate=" + paidDate + ", status=" + status + "]";
+		return "SemesterBean [studentId=" + studentId + ", transactionId=" + transactionId + ", studentName="
+				+ studentName + ", semester=" + semester + ", feePaidAmount=" + feePaidAmount + ", balance=" + balance
+				+ ", paidDate=" + paidDate + ", status=" + status + "]";
 	}
 }

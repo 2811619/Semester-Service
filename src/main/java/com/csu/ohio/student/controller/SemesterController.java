@@ -29,7 +29,7 @@ public class SemesterController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "Welcome to Spring Boot Vendor Service API!";
+		return "Welcome to Spring Boot Semester Service API!";
 	}
 
 	
